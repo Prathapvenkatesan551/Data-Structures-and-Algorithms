@@ -1,5 +1,9 @@
 package Searching_DSA;
 import java.util.*;
+/*
+Time complexity 
+Worst case - O(N)
+*/
 public class LinearSearch 
 {
 	public static void main(String args[]) {
