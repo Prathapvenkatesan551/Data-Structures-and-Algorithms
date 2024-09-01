@@ -1,5 +1,9 @@
 package Searching_DSA;
 import java.util.*;
+/*
+Time complexity 
+Worst case - O(log N)
+*/
 public class BinarySearch {
 	private static int search(int arr[],int target)
 	{
