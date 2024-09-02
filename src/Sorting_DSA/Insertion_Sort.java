@@ -1,5 +1,9 @@
 package Sorting_DSA;
 import java.util.*;
+/*
+ Time Complexity 
+ Worst Case - O(n^2)
+ */
 public class Insertion_Sort
 {
 	private static void sort(int arr[]) 
