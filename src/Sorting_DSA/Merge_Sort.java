@@ -1,8 +1,10 @@
 package Sorting_DSA;
-
 import java.util.Arrays;
 import java.util.Scanner;
-
+/*
+Time complexity
+worst case = O(N log N)
+*/
 public class Merge_Sort {
 	private static int[] sort(int arr[]){
 		if(arr.length==1) return arr;
@@ -37,7 +39,6 @@ public class Merge_Sort {
 		int n=sc.nextInt();
 		int arr[]=new int[n];
 		for(int i=0;i<n;i++) arr[i]=sc.nextInt();
-//		int result=merge(arr);
 		System.out.println(Arrays.toString(sort(arr)));
 	}
 
