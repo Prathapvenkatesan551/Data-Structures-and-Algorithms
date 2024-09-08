@@ -109,12 +109,27 @@ class Node
 			}
 			if(n==pos-1 && pos<=n) 
 			{
-//				try {
 				temp.next=temp.next.next;
-//				}
-//				catch(Exception e) {}
 				
 			}
+		}
+		
+	}
+	public void reverse() {
+		if(head==null) {
+			return;
+		}
+		else {
+			Node current=head;
+			Node prev=null;
+			Node next=null;
+			while(current!=null) {
+				next=current.next;
+				current.next=prev;
+				prev=current;
+				current=next;
+			}
+			head=prev;
 		}
 		
 	}
@@ -145,7 +160,8 @@ public class Singly {
 //		list.insertAtPosition(100, 5);
 //		System.out.println("Done");
 //		list.deleteAtEnd();
-		list.deleteAtPos(5);
+//		list.deleteAtPos(5);
+		list.reverse();
 		list.print();
 
 	}
