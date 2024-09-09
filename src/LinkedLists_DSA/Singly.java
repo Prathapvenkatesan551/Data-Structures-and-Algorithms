@@ -1,25 +1,25 @@
 package LinkedLists_DSA;
-class Node
+class SNode
 {
 	
-	Node next;
+	SNode next;
 	int data;
-	public Node(int data)
+	public SNode(int data)
 	{
 		this.data=data;
 		this.next=null;
 	}
 }
- class LinkedList
+ class SLinkedList
  {
-	Node head=null;
+	SNode head=null;
 	public void insertAtEnd(int data) {
-		Node newNode=new Node(data);
+		SNode newNode=new SNode(data);
 		if(head==null) {
 			head=newNode;
 		}
 		else {
-			Node temp=head;
+			SNode temp=head;
 			while(temp.next!=null) {
 				temp=temp.next;
 			}
@@ -27,7 +27,7 @@ class Node
 		}
 	}
 	public void insertAtBeginning(int data) {
-		Node newNode=new Node(data);
+		SNode newNode=new SNode(data);
 		if(head==null) {
 			head=newNode;
 		}
@@ -37,14 +37,14 @@ class Node
 		}
 	}
 	public void insertAtPosition(int data,int pos) {
-		Node newNode=new Node(data);
+		SNode newNode=new SNode(data);
 		if(pos==0) {
 			newNode.next=head;
 			head=newNode;
 		}
 		else
 		{
-			Node temp=head;
+			SNode temp=head;
 			int n=0;
 			while(temp.next!=null)
 			{
@@ -81,7 +81,7 @@ class Node
 		}
 		else
 		{
-			Node temp=head;
+			SNode temp=head;
 			while(temp.next.next!=null) {
 				temp=temp.next;
 			}
@@ -97,7 +97,7 @@ class Node
 		}
 		else
 		{
-			Node temp=head;
+			SNode temp=head;
 			int n=0;
 			while(temp.next!=null) {
 				if(n==pos-1) {
@@ -120,9 +120,9 @@ class Node
 			return;
 		}
 		else {
-			Node current=head;
-			Node prev=null;
-			Node next=null;
+			SNode current=head;
+			SNode prev=null;
+			SNode next=null;
 			while(current!=null) {
 				next=current.next;
 				current.next=prev;
@@ -139,7 +139,7 @@ class Node
 			System.out.println("List is empty");
 		}
 		else {
-			Node temp=head;
+			SNode temp=head;
 			while(temp!=null) {
 				System.out.println(temp.data);
 				temp=temp.next;
@@ -151,7 +151,7 @@ class Node
 public class Singly {
 
 	public static void main(String[] args) {
-		LinkedList list=new LinkedList();
+		SLinkedList list=new SLinkedList();
 		for(int i=0;i<5;i++) 
 		{
 			list.insertAtEnd(i+1);
