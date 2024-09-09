@@ -93,6 +93,54 @@ class LinkedList{
 		}
 	}
 	
+	public void deleteAtPos(int pos) {
+		if(pos==0) {
+			head=head.next;
+			head.prev=null;
+		}
+		else
+		{
+			Node temp=head;
+			int n=0;
+			while(temp.next.next!=null) {
+				
+				if(n==pos-1) {
+					temp.next=temp.next.next;
+					temp.next.prev=temp;
+					return;
+				}
+				n++;
+				temp=temp.next;
+			}
+			
+			if(pos-1==n) {
+				temp.next=null;
+			}
+		}
+	}
+	
+	public void reverse() {
+		if(head==null) {
+			System.out.println("List is empty");
+		}
+		else
+		{
+			Node current=head;
+			Node next=null;
+			
+			while(current.next!=null) {
+				next=current.next;
+				current.next=current.prev;
+				current.prev=next;
+				current=next;
+			}
+			current.next=current.prev;
+			current.prev=null;
+			head=current;
+		}
+			
+	}
+	
 	public void print() {
 		if(head==null) {
 			System.out.println("List is Empty");
@@ -124,7 +172,9 @@ public class Doubly {
 //			list.insertAtBeginning(i+1);
 			list.insertAtEnd(i+1);
 		}
-		list.insertAtPos(100, 5);
+//		list.insertAtPos(100, 5);
+//		list.deleteAtPos(4);
+		list.reverse();
 		list.print();
 	}
 
