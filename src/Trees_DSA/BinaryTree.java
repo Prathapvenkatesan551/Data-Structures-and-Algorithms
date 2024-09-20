@@ -60,6 +60,51 @@ class BinarySearchTree{
 			System.out.println(root.data);
 		}
 	}
+	
+	public Node search(int data,Node root) {
+		if(root==null || root.data==data) return root;
+		if(data>root.data) {
+			return search(data,root.right);
+		}
+		else
+		{
+			return search(data,root.left);
+		}
+	}
+	
+	public Node delete(Node root,int data) {
+		if(root==null) return root;
+		if(data>root.data) {
+			root.right=delete(root.right,data);
+		}
+		else if(data<root.data){
+			
+			root.left=delete(root.left,data);
+		}
+		else
+		{
+			
+			if(root.left==null) {
+				return root.right;
+			}
+			else if(root.right==null) {
+				return root.left;
+			}
+			
+			root.data=minRoot(root.right).data;
+			root.right=delete(root.right,root.data);
+		}
+		return root;
+	}
+	public Node minRoot(Node root) {
+	
+		if(root.left==null) return root;
+		else {
+			return minRoot(root.left);
+		}
+		
+		
+	}
 }
 public class BinaryTree {
 	
@@ -73,6 +118,16 @@ public class BinaryTree {
 //		tree.inOrder(tree.root);
 //		tree.preOrder(tree.root);
 		tree.postOrder(tree.root);
+		if(tree.search(3,tree.root)!=null) {
+			System.out.println("Exist");
+		}
+		else
+		{
+			System.out.println("Not Exist");
+		}
+		
+		tree.root=tree.delete(tree.root, 0);
+		tree.inOrder(tree.root);
 	
 }
 }
