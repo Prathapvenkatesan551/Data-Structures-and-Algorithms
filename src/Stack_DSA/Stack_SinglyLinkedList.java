@@ -1,5 +1,5 @@
 package Stack_DSA;
-
+// Using singly linked list
 class Node_S 
 {
     int data;

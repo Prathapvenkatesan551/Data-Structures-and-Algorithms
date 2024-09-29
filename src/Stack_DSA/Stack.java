@@ -1,4 +1,6 @@
 package Stack_DSA;
+
+// Stack using Doubly Linked List
 class Node
 {
 	Node next;
